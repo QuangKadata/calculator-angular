@@ -1,28 +1,129 @@
-<mat-toolbar color="primary">
-  <h1>Calculadora</h1>
-</mat-toolbar>
-<div class="bg-calc">
-  <div class="ext-calc">
-    <div id="body-calc">
-      <input type="text" class="screen-calc" value="0" disabled />
-      <div class="btn-calc" mat-elevation-z8>
-        <button type="button" class="operator" value="+">+</button>
-        <button type="button" class="operator" value="-">-</button>
-        <button type="button" class="operator" value="*">&times;</button>
-        <button type="button" class="operator" value="/">&divide;</button>
-        <button type="button" value="7">7</button>
-        <button type="button" value="8">8</button>
-        <button type="button" value="9">9</button>
-        <button type="button" value="4">4</button>
-        <button type="button" value="5">5</button>
-        <button type="button" value="6">6</button>
-        <button type="button" value="1">1</button>
-        <button type="button" value="2">2</button>
-        <button type="button" value="3">3</button>
-        <button type="button" value="0">0</button>
-        <button type="button" class="decimal function" value=".">.</button>
-        <button type="button" class="clear function" value="0">AC</button>
-        <button type="button" class="equal-sign operator" value="=">=</button>
+<div class="ext-calc">
+  <div id="body-calc">
+    <input type="text" class="screen-calc" value="{{ input }}" disabled />
+    <input type="text" class="screen-calc" value="{{ result }}" disabled />
+    <div class="btn-calc">
+      <div class="keyboard-calc">
+        <div style="width: 50%">
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="clickAllClear()"
+          >
+            AC
+          </button>
+        </div>
+        <div style="width: 25%">
+          <button type="button" class="btn btn-warning" (click)="clearInput()">
+            C
+          </button>
+        </div>
+        <div style="width: 25%">
+          <button
+            type="button"
+            class="btn operator"
+            (click)="clickOperator('/')"
+          >
+            /
+          </button>
+        </div>
+      </div>
+      <div class="keyboard-calc">
+        <div style="width: 25%">
+          <button type="button" class="btn" (click)="clickNumber('7')">
+            7
+          </button>
+        </div>
+        <div style="width: 25%">
+          <button type="button" class="btn" (click)="clickNumber('8')">
+            8
+          </button>
+        </div>
+        <div style="width: 25%">
+          <button type="button" class="btn" (click)="clickNumber('9')">
+            9
+          </button>
+        </div>
+        <div style="width: 25%">
+          <button
+            type="button"
+            class="btn operator"
+            (click)="clickOperator('*')"
+          >
+            *
+          </button>
+        </div>
+      </div>
+      <div class="keyboard-calc">
+        <div style="width: 25%">
+          <button type="button" class="btn" (click)="clickNumber('4')">
+            4
+          </button>
+        </div>
+        <div style="width: 25%">
+          <button type="button" class="btn" (click)="clickNumber('5')">
+            5
+          </button>
+        </div>
+        <div style="width: 25%">
+          <button type="button" class="btn" (click)="clickNumber('6')">
+            6
+          </button>
+        </div>
+        <div style="width: 25%">
+          <button
+            type="button"
+            class="btn operator"
+            (click)="clickOperator('-')"
+          >
+            -
+          </button>
+        </div>
+      </div>
+      <div class="keyboard-calc">
+        <div style="width: 25%">
+          <button type="button" class="btn" (click)="clickNumber('1')">
+            1
+          </button>
+        </div>
+        <div style="width: 25%">
+          <button type="button" class="btn" (click)="clickNumber('2')">
+            2
+          </button>
+        </div>
+        <div style="width: 25%">
+          <button type="button" class="btn" (click)="clickNumber('3')">
+            3
+          </button>
+        </div>
+        <div style="width: 25%">
+          <button
+            type="button"
+            class="btn operator"
+            (click)="clickOperator('+')"
+          >
+            +
+          </button>
+        </div>
+      </div>
+      <div class="keyboard-calc">
+        <div style="width: 25%">
+          <button type="button" class="btn" (click)="clickOperator('.')">
+            .
+          </button>
+        </div>
+        <div style="width: 25%">
+          <button type="button" class="btn" (click)="pressNum('0')">0</button>
+        </div>
+        <div style="width: 50%">
+          <button
+            type="button"
+            class="btn btn-success"
+            (click)="getResultAnswer()"
+          >
+            =
+          </button>
+        </div>
       </div>
     </div>
   </div>
